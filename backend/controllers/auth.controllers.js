@@ -53,15 +53,19 @@ export const signup = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in sign up controller: ", error.message);
-    res.status(500).json({ error: "Internal Sever error: creating new user" });
+    res.status(500).json({ error: "Internal Sever error: in signup" });
   }
 };
 
 export const login = async (req, res) => {
 	try {
+    //get login info
 		const { username, password } = req.body;
+
+    //find user base on username
 		const user = await User.findOne({ username });
 
+    //check if password match and user exist
     const isPasswordCorrect = await bcrypt.compare(password, user?.password || "");
 
 		if (!user || !isPasswordCorrect) {
@@ -78,11 +82,18 @@ export const login = async (req, res) => {
 		});
 	} catch (error) {
 		console.log("Error in login controller", error.message);
-		res.status(500).json({ error: "Internal Server Error" });
+		res.status(500).json({ error: "Internal Server Error in login" });
 	}
 };
 
-export const logout = (req, res) => {
-  console.log("logout");
-  res.send("logout");
+export const logout = async (req, res) => {
+  try {
+    res.cookie("jwt", "", {
+      maxAge: 0
+    })
+    res.status(200).json({message: "logout successfully"});
+  }catch (error) {
+		console.log("Error in logout controller", error.message);
+		res.status(500).json({ error: "Internal Server Error in logout" });
+  }
 };
