@@ -1,6 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes.js';
+import connectToMongoDB from './db/connectToMongoDB.js';
+
 
 const app = express();
 dotenv.config(); //allow using environment variable
@@ -14,4 +16,9 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes)
 
-app.listen(PORT, () => console.log(`Sever Running on port ${PORT}`));
+app.listen(PORT, () => {
+
+    connectToMongoDB();
+    console.log(`Sever Running on port ${PORT}`);
+
+});
