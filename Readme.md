@@ -1,4 +1,7 @@
 # a Fullstack chat app MERN
+- React.js
+- MongoDB through mongoose
+- random avatar from `https://avatar-placeholder.iran.liara.run/`
 # Ran command
 - `npm create vite@latest` in frontend
 - `npm i` in frontend
