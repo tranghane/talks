@@ -1,8 +1,9 @@
 # a Fullstack chat app MERN
-- React.js
+- React.js and React icons
 - MongoDB through mongoose
 - tailwind css and daisy UI
 - random avatar from `https://avatar-placeholder.iran.liara.run/`
+- 
 # Ran command
 - `npm create vite@latest` in frontend
 - `npm i` in frontend
@@ -11,6 +12,7 @@
 - `npm i nodemon --save-dev` in root
 - `npm install -D tailwindcss postcss autoprefixer`
 - `npx tailwindcss init -p`
+- `npm install react-icons --save`
 - using postman to test and debug
 # How to run
 - `npm run sever` to start the sever, should see `Sever Running on port 8000` on terminal
