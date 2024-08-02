@@ -4,31 +4,26 @@ import { Link } from "react-router-dom";
 import useSignup from "../../hooks/useSignup";
 
 const SignUp = () => {
-
   //set up useState to get value from user
   const [inputs, setInputs] = useState({
-    fullName: '',
-    username: '',
-    password:'',
-    confirmPassword: '',
-    gender: ''
-  })
+    fullName: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    gender: "",
+  });
 
-  const {loading, signup} = useSignup();
+  const { loading, signup } = useSignup();
 
   const handleCheckboxChange = (gender) => {
-    setInputs({ ...inputs, gender})
-  }
+    setInputs({ ...inputs, gender });
+  };
 
   //when page is submit, run this function
-  const handleSubmit =  async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // prevent that submitting the form do not reload the page
-    console.log(inputs) //to test print out the inputs
-
-    await signup(inputs)
-
-  }
-
+    await signup(inputs);
+  };
 
   return (
     <div className="flex flex-col imtems-center justify-center min-w-96 mx-auto">
@@ -51,11 +46,12 @@ const SignUp = () => {
             <input
               type="text"
               placeholder="John Doe"
-              
               className="w-full input input-bordered h-10 placeholder-gray-500 placeholder-opacity-50"
               //get fullName
               value={inputs.fullName}
-              onChange={(e) => setInputs({...inputs, fullName: e.target.value})}
+              onChange={(e) =>
+                setInputs({ ...inputs, fullName: e.target.value })
+              }
             />
           </div>
 
@@ -69,7 +65,9 @@ const SignUp = () => {
               className="w-full input input-bordered h-10 placeholder-gray-500 placeholder-opacity-50"
               //get username
               value={inputs.username}
-              onChange={(e) => setInputs({...inputs, username: e.target.value})}
+              onChange={(e) =>
+                setInputs({ ...inputs, username: e.target.value })
+              }
             />
           </div>
 
@@ -83,7 +81,9 @@ const SignUp = () => {
               className="w-full input input-bordered h-10 placeholder-gray-500 placeholder-opacity-50"
               //get password
               value={inputs.password}
-              onChange={(e) => setInputs({...inputs, password: e.target.value})}
+              onChange={(e) =>
+                setInputs({ ...inputs, password: e.target.value })
+              }
             />
           </div>
 
@@ -99,16 +99,19 @@ const SignUp = () => {
               className="w-full input input-bordered h-10 placeholder-gray-500 placeholder-opacity-50"
               //get confrim password
               value={inputs.confirmPassword}
-              onChange={(e) => setInputs({...inputs, confirmPassword: e.target.value})}
+              onChange={(e) =>
+                setInputs({ ...inputs, confirmPassword: e.target.value })
+              }
             />
           </div>
           <label className="label p-2">
             <span className="text-base label-text text-black">Avatar</span>
           </label>
 
-          <GenderCheckbox 
-          onCheckBoxChange = {handleCheckboxChange}
-          selectedGender={inputs.gender}/>
+          <GenderCheckbox
+            onCheckBoxChange={handleCheckboxChange}
+            selectedGender={inputs.gender}
+          />
 
           <Link
             to="/login"
@@ -131,7 +134,6 @@ const SignUp = () => {
 
 export default SignUp;
 
-
 //starter file
 // import React from "react";
 // import GenderCheckbox from "./GenderCheckBox";
@@ -140,8 +142,8 @@ export default SignUp;
 //   return (
 //     <div className="flex flex-col imtems-center justify-center min-w-96 mx-auto">
 //       <div
-//         className="w-full p-6 rounded-lg shadow-md bg-gray-400 
-//         bg-clip-padding 
+//         className="w-full p-6 rounded-lg shadow-md bg-gray-400
+//         bg-clip-padding
 //         backdrop-filter
 //         backdrop-blur-lg
 //         bg-opacity-0"

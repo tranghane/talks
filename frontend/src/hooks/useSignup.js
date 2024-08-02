@@ -19,7 +19,7 @@ const useSignup = () => {
       confirmPassword,
       gender,
     });
-	// same with { fullName, username, password, confirmPassword, gender } in auth.controllers.js
+    // same with { fullName, username, password, confirmPassword, gender } in auth.controllers.js
     if (!success) {
       return;
     }
@@ -32,7 +32,7 @@ const useSignup = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           fullName,
-          username, 
+          username,
           password,
           confirmPassword,
           gender,
@@ -41,10 +41,9 @@ const useSignup = () => {
 
       const data = await res.json();
       console.log(data);
-      
     } catch (error) {
       toast.error(`${error.message}`);
-      console.log(error.message + "is this the problem?")
+      console.log(error.message + "is this the problem?");
     } finally {
       setLoading(false);
     }
@@ -73,7 +72,7 @@ function handleInputError({
   }
 
   if (password.length < 6) {
-    toast.error("Your password is too short, just like you :D");
+    toast.error("Your password is emotionless, need more characters");
     return false;
   }
 
