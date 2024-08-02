@@ -5,12 +5,13 @@ import generateTokenAndSetCookie from "../utils/generateToken.js";
 export const signup = async (req, res) => {
   try {
     //get input from user
-    const { fullName, username, password, confirmedPassword, gender } =
+    const { fullName, username, password, confirmPassword, gender } =
       req.body;
 
     //handle password not matching
-    if (password !== confirmedPassword) {
-      return res.status(400).json({ error: "Passwords don't match" });
+    if (password !== confirmPassword) {
+      console.log(`${password} !== ${confirmPassword}`)
+      return res.status(400).json({ error: "Passwords don't match, error in auth controllers" });
     }
 
     //get the user base on the username to check if exist username already
