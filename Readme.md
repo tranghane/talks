@@ -14,3 +14,4 @@
 - using postman to test and debug
 # How to run
 - `npm run sever` to start the sever, should see `Sever Running on port 8000` on terminal
+- testing commit
