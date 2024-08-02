@@ -11,7 +11,7 @@ const Login = () => {
         bg-opacity-0"
       >
         <h1 className="text-3xl font-semibold text-center text-gray-300">
-          Login <span className="text-blue-500">Talks</span>
+          Login <span className="text-blue-800">Talks</span>
         </h1>
         <form>
           <div>
@@ -40,7 +40,7 @@ const Login = () => {
             />
           </div>
 
-          <a to='#' className='text-sm  hover:underline hover:text-blue-600 mt-2 inline-block'>
+          <a to='#' className='text-sm hover:cursor-pointer hover:underline hover:text-blue-600 mt-2 inline-block'>
 						{"Don't"} have an account?
 					</a>
 
