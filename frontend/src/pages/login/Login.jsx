@@ -16,7 +16,7 @@ const Login = () => {
         <form>
           <div>
             <label className="label p-2">
-              <span className="text-base label-text text-[#415312]">
+              <span className="text-base label-text text-black">
                 Username
               </span>
             </label>
@@ -29,7 +29,7 @@ const Login = () => {
 
           <div>
             <label className="label p-2">
-              <span className="text-base label-text text-[#74b9cb]">
+              <span className="text-base label-text text-black">
                 Password
               </span>
             </label>
