@@ -13,6 +13,8 @@
 - `npm install -D tailwindcss postcss autoprefixer`
 - `npx tailwindcss init -p`
 - `npm install react-icons --save`
+- `npm i react-router-dom`
+- `npm install react-hot-toast`
 - using postman to test and debug
 # How to run
 - `npm run sever` to start the sever, should see `Sever Running on port 8000` on terminal
