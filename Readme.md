@@ -3,7 +3,7 @@
 - MongoDB through mongoose
 - tailwind css and daisy UI
 - random avatar from `https://avatar-placeholder.iran.liara.run/`
-- 
+- React router, react hot toast, react context, 
 # Ran command
 - `npm create vite@latest` in frontend
 - `npm i` in frontend
