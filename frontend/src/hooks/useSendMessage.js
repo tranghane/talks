@@ -9,7 +9,6 @@ const useSendMessage = () => {
 	const sendMessage = async (message) => {
 		setLoading(true);
 		try {
-            //send message through POST method
 			const res = await fetch(`/api/messages/send/${selectedConversation._id}`, {
 				method: "POST",
 				headers: {
@@ -23,7 +22,6 @@ const useSendMessage = () => {
 			setMessages([...messages, data]);
 		} catch (error) {
 			toast.error(error.message);
-            console.log("error in useSendMessage.js", error.message);
 		} finally {
 			setLoading(false);
 		}
