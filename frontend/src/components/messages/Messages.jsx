@@ -31,13 +31,13 @@
 // 		// pass in the id and message to Message component
 // 		// console.log("THIS IS MESSAGE ID: ", message._id) // try this to debug
 // 		// return (
-		
+
 // 		   <Message key={idx} message={message} />
 // 		// );
 // 			//EROR: WEIRD MESSGAE ID BEHAVIOUR (keep getting repeat key when rendering message id)
 // 			// Happen whenever sending a new message, resolve by simply reloading the page
 //         ))
-		
+
 // 		}
 //     </div>
 //   );
@@ -51,32 +51,42 @@ import Message from "./Message";
 // import useListenMessages from "../../hooks/useListenMessages";
 
 const Messages = () => {
-	const { messages, loading } = useGetMessages();
-	// useListenMessages();
-	const lastMessageRef = useRef();
+  const { messages, loading } = useGetMessages();
+  // useListenMessages();
+  const lastMessageRef = useRef();
 
-	useEffect(() => {
-		setTimeout(() => {
-			lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
-		}, 100);
-	}, [messages]);
+  console.log("THESES ARE MESSAGES: ", messages); // for debugging
 
-	return (
-		<div className='px-4 flex-1 overflow-auto'>
-			{!loading &&
-				messages.length > 0 &&
-				messages.map((message, idx) => (
-					<div key={idx} ref={lastMessageRef}>
-						<Message message={message} />
-					</div>
-				))}
+  useEffect(() => {
+    setTimeout(() => {
+      lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }, [messages]);
 
-			{loading && [...Array(3)].map((_, idx) => <MessageSkeleton key={idx} />)}
-			{!loading && messages.length === 0 && (
-				<p className='text-center'>Send a message to start the conversation</p>
-			)}
-		</div>
-	);
+  return (
+    <div className="px-4 flex-1 overflow-auto">
+      {!loading &&
+        messages.length > 0 &&
+        messages.map(
+          (message, idx) => (
+            // console.log("THIS IS MESSAGE ID: ", message._id), //print out the message id,
+            (
+              //BUG: whenever sending a new message, message._id is not exist -> possibly in useGetMessages.js
+              <div key={idx} ref={lastMessageRef}>
+                {/* <Message message={message} /> */}
+				{/* when first send the message, the element  */}
+				{message.newMessage ? <Message message={message.newMessage} /> : <Message message={message} />}
+              </div>
+            )
+          )
+        )}
+
+      {loading && [...Array(3)].map((_, idx) => <MessageSkeleton key={idx} />)}
+      {!loading && messages.length === 0 && (
+        <p className="text-center">Send a message to start the conversation</p>
+      )}
+    </div>
+  );
 };
 export default Messages;
 
