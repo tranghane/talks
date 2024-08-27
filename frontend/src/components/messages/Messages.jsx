@@ -73,9 +73,9 @@ const Messages = () => {
             (
               //BUG: whenever sending a new message, message._id is not exist -> possibly in useGetMessages.js
               <div key={idx} ref={lastMessageRef}>
-                {/* <Message message={message} /> */}
-				{/* when first send the message, the element  */}
-				{message.newMessage ? <Message message={message.newMessage} /> : <Message message={message} />}
+                <Message message={message} />
+				{/* when first send the message, the element sometime is newMessage instead */}
+				{/* {message.newMessage ? <Message message={message.newMessage} /> : <Message message={message} />} */}
               </div>
             )
           )

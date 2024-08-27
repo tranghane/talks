@@ -37,7 +37,7 @@ export const sendMessage = async (req, res) => {
     // save into database parralelly
     await Promise.all([conversation.save(), newMessage.save()]);
 
-    res.status(201).json({ newMessage });
+    res.status(201).json(newMessage );
   } catch (error) {
     console.log("Error in sendMessage: ", error.message);
     res.status(500).json({ error: "Internal sever error in sendMessage" });
