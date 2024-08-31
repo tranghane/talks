@@ -55,7 +55,7 @@ const Messages = () => {
   // useListenMessages();
   const lastMessageRef = useRef();
 
-  console.log("THESES ARE MESSAGES: ", messages); // for debugging
+  // console.log("THESES ARE MESSAGES: ", messages); // for debugging
 
   useEffect(() => {
     setTimeout(() => {
