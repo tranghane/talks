@@ -7,9 +7,11 @@ import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
+import {app} from "./socket/socket.js"
 
 dotenv.config(); //allow using environment variable
-const app = express();
+// const app = express();
+
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json()); //to parse the incoming requests with Json payloads (from req.body)
