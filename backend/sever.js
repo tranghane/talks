@@ -7,7 +7,7 @@ import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
-import {app} from "./socket/socket.js"
+import {app, server} from "./socket/socket.js"
 
 dotenv.config(); //allow using environment variable
 // const app = express();
@@ -27,7 +27,7 @@ app.use("/api/users", userRoutes);
 //     // res.send("Hello?")
 // });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToMongoDB();
   console.log(`Sever Running on port ${PORT}`);
 });

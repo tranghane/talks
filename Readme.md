@@ -17,6 +17,7 @@
 - `npm i react-router-dom`
 - `npm install react-hot-toast`
 - `npm install zustand` in frontend
+- `npm i socket.io.client` in frontend
 - using postman to test and debug
 # How to run
 - `npm run sever` to start the sever, should see `Sever Running on port 8000` on terminal
