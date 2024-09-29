@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "sever.js",
   "scripts": {
-    "sever": "nodemon backend/sever.js"
+    "server": "nodemon backend/sever.js"
   },
   "type": "module",
   "keywords": [],
