@@ -35,7 +35,7 @@ const SignUp = () => {
         bg-opacity-0"
       >
         <h1 className="text-3xl font-semibold text-center text-gray-300">
-          Signup <span className="text-blue-800">Talks</span>
+          Create a <span className="text-blue-800">new account</span>
         </h1>
 
         <form onSubmit={handleSubmit}>
