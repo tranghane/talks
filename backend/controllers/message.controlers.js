@@ -39,16 +39,13 @@ export const sendMessage = async (req, res) => {
 
     //todo: socket io
     const receiverSocketId = getReceiverSocketId(receiverId);
-    console.log("did it get here? 1");
 
     if (receiverSocketId) {
-      console.log("did it get here? 2");
 
       // io.to(<socket_id>).emit() used to send events to specific client
       io.to(receiverSocketId).emit("newMessage", newMessage);
     }
-
-    console.log("did it get here? 3");
+    
     res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage: ", error.message);
