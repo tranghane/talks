@@ -45,7 +45,7 @@ const SignUp = () => {
             </label>
             <input
               type="text"
-              placeholder="John Doe"
+              placeholder="full name"
               className="w-full input input-bordered h-10 placeholder-gray-500 placeholder-opacity-50"
               //get fullName
               value={inputs.fullName}
@@ -61,7 +61,7 @@ const SignUp = () => {
             </label>
             <input
               type="text"
-              placeholder="johndoe"
+              placeholder="username"
               className="w-full input input-bordered h-10 placeholder-gray-500 placeholder-opacity-50"
               //get username
               value={inputs.username}
