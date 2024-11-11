@@ -21,3 +21,8 @@
 - using postman to test and debug
 # How to run
 - `npm run sever` to start the sever, should see `Sever Running on port 8000` on terminal
+# Screenshots
+![talks1](https://github.com/user-attachments/assets/9c4e1490-9792-4bad-a0cf-1a40812f092e)
+![talks0](https://github.com/user-attachments/assets/b67af136-9253-4f5b-9ef1-a3112db47352)
+![talks2](https://github.com/user-attachments/assets/510f0dbb-0703-4731-b884-56f67c7b1f48)
+![talks3](https://github.com/user-attachments/assets/e9fe5999-b04e-4325-b4ac-798b9b55c824)
