@@ -5,6 +5,7 @@
 - random avatar from `https://avatar-placeholder.iran.liara.run/`
 - React router, react hot toast, react context, 
 - Zustand
+- Deploy on https://render.com/
 # Ran command
 - `npm create vite@latest` in frontend
 - `npm i` in frontend
